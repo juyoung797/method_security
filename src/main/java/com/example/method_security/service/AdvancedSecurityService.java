@@ -22,7 +22,7 @@ public class AdvancedSecurityService {
         log.info("⚠️ 민감한 작업 실행 - 업무 시간 또는 관리자");
     }
 
-    @PreAuthorize("@customSecurity.isDepartmentMember(T(com.example.method_security.model.Department).HR, authentication")
+    @PreAuthorize("@customSecurity.isDepartmentMember(T(com.example.method_security.model.Department).HR, authentication)")
     public List<User> getEmployeeRecords() {
         log.info("👥 직원 기록 조회 - HR 부서원만");
         return userRepository.findAll();

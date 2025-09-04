@@ -35,7 +35,7 @@ public class WebSecurityConfig {
         return http
                 .authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers("/", "/login", "/register", "/static.css/**", "/js/**", "/h2-console/**").permitAll()
+                                .requestMatchers("/", "/login", "/register", "/static/**", "/js/**", "/h2-console/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .formLogin(
